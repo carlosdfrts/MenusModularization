@@ -2,6 +2,7 @@
 from interface import * # Módulo com funções de interface (menu, cabeçalho).
 from arquivo import * # Módulo com funções para manipulação de arquivos.
 from time import sleep # Módulo para introduzir atrasos.
+import os
 
 # Definindo o nome do arquivo.
 arquivo = 'ficha.txt'
@@ -18,21 +19,26 @@ while True:
     if resposta == 1:
         # Opção de listar o conteúdo do arquivo.
         lerArquivo(arquivo)
+        
+        os.system("cls")
     elif resposta == 2:
         # Opção para cadastrar uma nova pessoa.
         cabeçalho('NOVO CADASTRO')
         nome = str(input('Nome: '))
         idade = leiaInt('Idade: ')
         cadastrar(arquivo, nome, idade)
+        
     elif resposta == 3:
         # Opção para sair do sistema.
         cabeçalho('\033[33mSaindo do sistema...\033[m')
         sleep(2)
         cabeçalho('\033[32mVolte sempre! :D\033[m')
+        sleep(1)
+        os.system("cls")
         break
     else: 
         # Mensagem de erro para opção inválida.
         print('\033[031mERRO! Opção inválida, digite uma opção válida.\033[m')
 
     # Introduzindo um atraso de 2 segundos entre as operações.
-    sleep(2)
+    sleep(1)

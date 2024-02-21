@@ -34,6 +34,7 @@ def lerArquivo(nome):
             print(f'{dado[0]:<30}{dado[1]:>3} anos')  # Exibe o nome e a idade formatados.
     finally:
         a.close()  # Garante que o arquivo seja fechado mesmo se ocorrer uma exceção.
+    input('\nAperte ENTER para continuar.')
 
 # Função para cadastrar novas informações no arquivo
 def cadastrar(arquivo, nome='<desconhecido>', idade=0):

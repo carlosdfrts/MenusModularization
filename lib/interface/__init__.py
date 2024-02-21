@@ -1,3 +1,6 @@
+from time import sleep
+import os
+
 # Função que retorna uma linha de caracteres '-' com tamanho padrão de 45.
 def linha(tam=45):
     return '-' * tam
@@ -17,6 +20,8 @@ def menu(lista):
         c += 1
     print(linha())  # Exibe uma linha depois do menu.
     opc = leiaInt('\033[32mSua opção: \033[m')  # Pede ao usuário para digitar uma opção.
+    sleep(1)
+    os.system("cls")
     return opc
 
 # Função para ler um valor inteiro do usuário, com tratamento de exceções.
